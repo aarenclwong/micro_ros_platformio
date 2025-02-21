@@ -35,7 +35,7 @@ class Repository:
                 sys.exit(1)
             return
 
-        command = "git clone -b {} '{}' {}".format(self.branch, self.url, self.path)
+        command = "git clone -b {} {} {}".format(self.branch, self.url, self.path)
         print(command)
         result = run_cmd(command)
 
