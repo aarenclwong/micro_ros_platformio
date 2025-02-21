@@ -28,7 +28,7 @@ class Repository:
         self.path = folder + "/" + self.name
         # TODO(pablogs) ensure that git is installed
         if os.path.exists(self.path):
-            command = f"cd {self.path} && git pull {self.url} {self.branch}"
+            command = f"cd {self.path} && git pull '{self.url}' {self.branch}"
             result = run_cmd(command)
             if 0 != result.returncode:
                 print(f"{self.name} pull failed: \n{result.stderr.decode('utf-8')}")
